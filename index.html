@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Smart Credit Card Checkout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="checkout-container">
+    
+    <!-- 3D Interactive Card Preview Container -->
+    <div class="card-wrapper">
+      <div class="card" id="card">
+        <!-- Front Side -->
+        <div class="card-front">
+          <div class="card-chip"></div>
+          <div class="card-logo">CARD</div>
+          <div class="card-number" id="display-number">•••• •••• •••• ••••</div>
+          <div class="card-details">
+            <div class="card-holder">
+              <span class="label">CARD HOLDER</span>
+              <span class="value" id="display-name">YOUR NAME</span>
+            </div>
+            <div class="card-expires">
+              <span class="label">EXPIRES</span>
+              <span class="value" id="display-expiry">MM/YY</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back Side (Flips on CVV focus) -->
+        <div class="card-back">
+          <div class="magnetic-strip"></div>
+          <div class="cvv-box">
+            <span class="label">CVV</span>
+            <div class="cvv-value" id="display-cvv">•••</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Payment Form -->
+    <div class="form-container">
+      <h2>Complete Payment</h2>
+      <p class="subtitle">Enter your card details to complete the payment.</p>
+
+      <form id="payment-form" autocomplete="off">
+        <div class="input-group">
+          <label for="card-number">Card Number</label>
+          <input type="text" id="card-number" placeholder="1267 6736 7467 6475" maxlength="19">
+        </div>
+
+        <div class="input-group">
+          <label for="card-name">Card Holder</label>
+          <input type="text" id="card-name" placeholder="Full Name" maxlength="25">
+        </div>
+
+        <div class="input-row">
+          <div class="input-group">
+            <label for="card-expiry">Expiry</label>
+            <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5">
+          </div>
+          <div class="input-group">
+            <label for="card-cvv">CVV</label>
+            <input type="password" id="card-cvv" placeholder="123" maxlength="4">
+          </div>
+        </div>
+
+        <button type="submit" class="pay-btn">Pay Now</button>
+      </form>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
